@@ -15,24 +15,48 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btn3"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:onClick="do3Test"
             android:text="3"/>
 
         <Button
+            android:id="@+id/btn4"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:onClick="do6Test"
+            android:text="4"/>
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="5"/>
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
             android:text="6"/>
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="7"/>
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="8"/>
 
         <Button
+            android:id="@+id/btn9"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:onClick="do9Test"
             android:text="9"/>
 
     </LinearLayout>
