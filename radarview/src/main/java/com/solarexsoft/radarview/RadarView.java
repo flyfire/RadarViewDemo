@@ -79,7 +79,7 @@ public class RadarView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.translate(mWidth/2, mHeight/2);
-        canvas.drawCircle(0, 0, radius, mainPaint);
+//        canvas.drawCircle(0, 0, radius, mainPaint);
         if (isDataValid()) {
             drawSpiderWeb(canvas);
             drawText(canvas);
@@ -94,8 +94,8 @@ public class RadarView extends View {
         path.reset();
         for (int i = 0; i < count; i++) {
             double percent = mData.get(i).getPercent()*1f/maxValue;
-            float x = (float)(radius*Math.sin(angle/2+angle*i)*percent);
-            float y = (float)(radius*Math.cos(angle/2+angle*i)*percent);
+            float x = (float)(radius*Math.cos(Math.PI/2 + angle*i)*percent);
+            float y = (float)(radius*Math.sin(Math.PI/2 + Math.PI + angle*i)*percent);
             if (i == 0) {
                 path.moveTo(x, y);
             } else {
@@ -116,8 +116,8 @@ public class RadarView extends View {
         Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
         float fontHeight = fontMetrics.descent - fontMetrics.ascent;
         for (int i = 0; i < count; i++) {
-            float x = (float)((radius+fontHeight*2)*Math.sin(angle/2+angle*i));
-            float y = (float)((radius+fontHeight*2)*Math.cos(angle/2+angle*i));
+            float x = (float)((radius+fontHeight*2)*Math.cos(Math.PI/2 + angle*i));
+            float y = (float)((radius+fontHeight*2)*Math.sin(Math.PI/2 + Math.PI + angle*i));
             String title = mData.get(i).getTitle();
             float dis = textPaint.measureText(title);
             canvas.drawText(title, x-dis/2, y, textPaint);
@@ -131,11 +131,11 @@ public class RadarView extends View {
         float r = radius / (count - 1);
         for (int i = 0; i < count; i++) {
             float curR = r * i;
-            canvas.drawCircle(0, 0, curR, mainPaint);
+//            canvas.drawCircle(0, 0, curR, mainPaint);
             webPath.reset();
             for (int j = 0; j < count; j++) {
-                float x = (float) (curR * Math.sin(angle/2 + angle*j));
-                float y = (float) (curR * Math.cos(angle/2 + angle*j));
+                float x = (float) (curR * Math.cos(Math.PI/2 + angle*j));
+                float y = (float) (curR * Math.sin(Math.PI/2 + Math.PI + angle*j));
                 if (j == 0) {
                     webPath.moveTo(x, y);
                 } else {
